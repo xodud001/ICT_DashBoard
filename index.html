@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="utf-8">
+    <title>수직형 재배기 실시간 현황판</title>
+    <link rel="shortcut icon" href="/img/icon.png">
+  
+    <meta name="viewport" content="width = device-width, initial-scale = 1.0, maximum-scale = 1.0, minimum-scale = 1.0, user-scalable=no">
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <link href="main.css" rel="stylesheet"/>
+    <script defer src="main.js"></script>
+</head>
+<body>
+<div class="body__container">
+    <section class="section--board">
+        <div class="inner clearfix">
+            <div class="left float--left">
+                <div class="title">
+                    <ul>
+                        <li>
+                            <img src="/img/icon.png" alt="icon">
+                        </li>
+                        <li>
+                            <span class="sub-title">
+                                영진전문대학교 이브와 ICT | WeCan<br>
+                            </span>
+                            <span class="main-title">
+                                수직형 재배기 실시간 현황판
+                            </span>
+                        </li>
+                    </ul>
+
+                </div>
+
+                <div class="cctv">
+                    cctv 표시 영역
+                </div>
+            </div>
+            <div class="right float--right">
+                <div class="info--in">
+                    <h1>
+                        실내 정보
+                    </h1>
+                    <div class="info-main">
+                        <div class="info-section">
+                            <div class="temp-marking">
+                                <span>-10</span>
+                                <span>0</span>
+                                <span>10</span>
+                                <span>20</span>
+                                <span>30</span>
+                                <span>40</span>
+                                <span>50</span>
+                            </div>
+                            <div class="bottom clearfix">
+                                <span class="float--left">온도</span>
+                                <div class="temp-graph float--left"></div>
+                                <span class="float--right">30℃</span>
+                            </div>
+                        </div>
+                        <div class="info-section">
+                            <div class="humi-marking">
+                                <span>0</span>
+                                <span>20</span>
+                                <span>40</span>
+                                <span>60</span>
+                                <span>80</span>
+                                <span>100</span>
+                            </div>
+                            <div class="bottom clearfix">
+                                <span class="float--left">습도</span>
+                                <div class="temp-graph float--left"></div>
+                                <span class="float--right">40%</span>
+                            </div>
+                            
+                        </div>
+                        <div class="info-section">
+                            <div class="ph-marking">
+                                <span>0</span>
+                                <span>20</span>
+                                <span>40</span>
+                                <span>60</span>
+                                <span>80</span>
+                                <span>100</span>
+                            </div>
+                            <div class="bottom clearfix">
+                                <span class="float--left">산도</span>
+                                <div class="temp-graph float--left"></div>
+                                <span class="float--right">5.5℃</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info--out">
+                    <div id="out-inner">
+
+                        <div class="top clearfix">
+                            <div class="postion float--left">
+                                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 35.219 35.219" style="enable-background:new 0 0 35.219 35.219;"
+                                    xml:space="preserve">
+                                    <path
+                                        d="M17.612,0C11.005,0,5.648,5.321,5.648,11.885c0,3.358,3.294,9.374,3.294,9.374l8.229,13.96l8.586-13.797
+                                    c0,0,3.814-5.74,3.814-9.537C29.572,5.321,24.216,0,17.612,0z M17.556,18.431c-3.784,0-6.849-3.065-6.849-6.853
+                                    c0-3.783,3.064-6.846,6.849-6.846c3.782,0,6.85,3.063,6.85,6.846C24.406,15.366,21.338,18.431,17.556,18.431z" />
+                                </svg>
+                                <span id="city">DAEGU</span>
+                            </div>
+                            <a href="#" class="float--right" onclick="loadDoc()">
+                                <img id="reset" src="/img/replay_white.png" alt="">
+                            </a>
+                        </div>
+                        <div class="middle">
+                            <div class="middle--left">
+                                <img id="weather-icon" src="/img/Clouds.png" alt="weather-icon"/>
+
+                                <span id="main">흐림</span>
+                            </div>
+                            <span id="temp" class="middle--right">
+                                36℃
+                            </span>
+                        </div>
+                        <div class="bottom">
+                            <ul>
+                                <li>
+                                    <h2>
+                                        습도
+                                    </h2>
+                                    <p id="humi">
+                                        60%
+                                    </p>
+                                </li>
+                                <li>
+                                    <h2>
+                                        체감온도
+                                    </h2>
+                                    <p id="feels">
+                                        40℃
+                                    </p>
+                                </li>
+                                <li>
+                                    <h2>
+                                        기압
+                                    </h2>
+                                    <p id="pressure">
+                                        1023
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+
+                        
+                    </div>
+                    <img src="img/spinner.gif" alt="Loading..." id="loading" class="loading" width="50px" height="50px" />
+                </div>
+
+            </div>
+        </div>
+    </section>
+</div>
+</body>
+</html>
